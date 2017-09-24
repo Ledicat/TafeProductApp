@@ -1,6 +1,6 @@
 Product Maintenance
 
-Copyright (c) [2017] [(enter your name here)]
+Copyright (c) [2017] [Michelle Britton]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
