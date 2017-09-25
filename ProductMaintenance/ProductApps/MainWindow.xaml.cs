@@ -24,6 +24,7 @@ namespace ProductApps
         //Delivery charge and wrapping charge constants for easy modification
         const int DELIVERY_CHARGE = 25;
         const int WRAPPING_CHARGE = 5;
+        const decimal GST_MULTIPLIER = 1.1m;
 
         public MainWindow()
         {
@@ -39,6 +40,7 @@ namespace ProductApps
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DELIVERY_CHARGE);
                 totalChargeWrapTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DELIVERY_CHARGE + WRAPPING_CHARGE);
+                totalChargeGSTTextBlock.Text = Convert.ToString((cProduct.TotalPayment + DELIVERY_CHARGE + WRAPPING_CHARGE) * GST_MULTIPLIER);
             }
             catch (FormatException)
             {
@@ -52,6 +54,9 @@ namespace ProductApps
             priceTextBox.Text = "";
             quantityTextBox.Text = "";
             totalPaymentTextBlock.Text = "";
+            totalChargeTextBlock.Text = "";
+            totalChargeWrapTextBlock.Text = "";
+            totalChargeGSTTextBlock.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
