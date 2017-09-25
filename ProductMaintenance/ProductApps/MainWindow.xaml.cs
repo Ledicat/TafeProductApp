@@ -21,6 +21,9 @@ namespace ProductApps
     public partial class MainWindow : Window
     {
         Product cProduct;
+        //Delivery charge and wrapping charge constants for easy modification
+        const int DELIVERY_CHARGE = 25;
+        const int WRAPPING_CHARGE = 5;
 
         public MainWindow()
         {
@@ -34,7 +37,8 @@ namespace ProductApps
                 cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
-                totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25);
+                totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DELIVERY_CHARGE);
+                totalChargeWrapTextBlock.Text = Convert.ToString(cProduct.TotalPayment + DELIVERY_CHARGE + WRAPPING_CHARGE);
             }
             catch (FormatException)
             {
